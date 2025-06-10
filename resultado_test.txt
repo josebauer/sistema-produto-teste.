@@ -1,0 +1,28 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.2, pytest-8.4.0, pluggy-1.6.0
+rootdir: C:\Users\jose.bauer\Downloads\teste_produto1\teste_produto1
+plugins: html-4.1.1, metadata-3.1.1
+collected 2 items
+
+test_produto.py .F                                                       [100%]
+
+================================== FAILURES ===================================
+___________________________ test_cadastro_invalido ____________________________
+
+    def test_cadastro_invalido():
+      produto = cadastrar_produto('aaaa', '123', 'Acer', 'i5 14400f')
+    
+      codigo = produto['Código']
+      nome = produto['Nome']
+      assert isinstance(produto, dict)
+    
+      # Verifica se os tipos estão incorretos
+>     assert not codigo.isalpha()
+E     AssertionError: assert not True
+E      +  where True = <built-in method isalpha of str object at 0x0000023A1352FE40>()
+E      +    where <built-in method isalpha of str object at 0x0000023A1352FE40> = 'aaaa'.isalpha
+
+test_produto.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED test_produto.py::test_cadastro_invalido - AssertionError: assert not True
+========================= 1 failed, 1 passed in 0.05s =========================
